@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en">
+   <head>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+
+</head>
+<body>
+<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Gmail</th>
+				<th>Mobile</th>
+				<th>District</th>
+				<th>Time</th>
+				<th>Date</th>
+				<th>Status</th>
+				<th>Amount</th>
+				<th>Pay</th>
+
+
+
+
+
+			</tr>
+		</thead>
+		<tbody>
+            {% for data in data %}
+			<tr>
+				<td>{{data.Name}}</td>
+				<td>{{data.Email}}</td>
+				<td>{{data.Number}}</td>
+				<td>{{data.location}}</td>
+				<td>{{data.time}}</td>
+				{% comment %} <td>{{data.date}}</td> {% endcomment %}
+                {% if data.accept %}
+
+				<td> Accepted</td>
+                {% elif data.reject %}
+				<td> Rejected</td>
+                {% else %}
+				<td> Pending</td>
+                {% endif %}
+
+
+                    
+                     
+					 <td>{{data.fees}}</td>
+                     <td> <a class="button button2" href="{% url 'pay' data.id %}">Pay</a></td>
+
+
+			</tr>
+            {% endfor %}
+				</tbody>
+	</table>
+</div>
+</body>
+</html>

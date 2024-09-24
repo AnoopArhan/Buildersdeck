@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+<style>
+	.button {
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	  }
+	  
+	  .button1 {background-color: #4CAF50;} /* Green */
+	  .button2 {background-color: #FF0000;} /* Red */
+	  .button3 {background-color: #008CBA;} /* Blue */
+	  .button4 {background-color: #00008B;} /* Blue */
+
+	  
+</style>
+</head>
+<body>
+	&nbsp;&nbsp;<a class="button button4" href="ahome">Back</a>
+	
+
+<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Location</th>
+				<th>Date</th>
+
+				<th>Time</th>
+				{% comment %} <th>Accept</th>
+				<th>Reject</th> {% endcomment %}
+				<th>Payment</th>
+				<th>Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+            {% for data in data %}
+			<tr>
+				<td>{{data.Name}}</td>
+				<td>{{data.Email}}</td>
+				<td>{{data.Number}}</td>
+				<td>{{data.location}}</td>
+				<td>{{data.date}}</td>
+
+				<td>{{data.time}}</td>
+				{% comment %} <td> <a class="button button1" href="{% url 'saccept' data.id %}">Accept</a></td>
+                <td> <a class="button button2" href="{% url 'sreject' data.id %}">Reject</a></td> {% endcomment %}
+                <td> <a class="button button2" href="{% url 'dpay' data.id %}">Payment</a></td>
+				 <td>{{data.fees}}</td>
+
+			</tr>
+            {% endfor %}
+				</tbody>
+	</table>
+</div>
+</body>
+</html>

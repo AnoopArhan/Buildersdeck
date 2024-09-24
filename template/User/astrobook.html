@@ -1,0 +1,354 @@
+<!DOCTYPE html> 
+{% load static %}
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>rhino</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <script>
+         function onLoad() {
+            var input = document.getElementById("dateField");
+            var today = new Date();
+            // Set month and day to string to add leading 0
+            var day = new String(today.getDate());
+            var mon = new String(today.getMonth()+1); //January is 0!
+            var yr = today.getFullYear();
+          
+              if(day.length < 2) { day = "0" + day; }
+              if(mon.length < 2) { mon = "0" + mon; }
+          
+              var date = new String( yr + '-' + mon + '-' + day );
+          
+            input.disabled = false; 
+            input.setAttribute('min', date);
+          }
+          
+          document.addEventListener('load', onLoad, false);
+
+          
+         </script>
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif '%}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header class="full_bg">
+         <!-- header inner -->
+         <div class="header">
+            <div class="header_top">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <ul class="contat_infoma">
+                           <li><i class="fa fa-phone" aria-hidden="true"></i> Call : +01 12345678909</li>
+                        </ul>
+                     </div>
+                     <div class="col-md-6">
+                       
+                     </div>
+                     <div class="col-md-3">
+                        <ul class="contat_infoma text_align_right">
+                           <li><a href="Javascript:void(0)"> <i class="fa fa-phone" aria-hidden="true"></i> demo@gmail.com</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="header_bottom">
+                        <div class="row">
+                           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                              <div class="full">
+                                 <div class="center-desk">
+                                    <div class="logo">
+                                       <h1><b>BUILDERSDECK</h1>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                              <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                                 <span class="navbar-toggler-icon"></span>
+                                 </button>
+                                 <div class="collapse navbar-collapse" id="navbarsExample04">
+                                    <ul class="navbar-nav mr-auto">
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="astroprof">home</a>
+                                       </li>
+                                       {% comment %} <li class="nav-item active">
+                                          <a class="nav-link" href="index.html">Register</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="about.html">About</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="project.html">project</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="staff.html">staff</a>
+                                       </li> {% endcomment %}
+                                      
+                                    
+                                 </div>
+                                 {% comment %} <ul class="search">
+                                    <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                 </ul> {% endcomment %}
+                              </nav>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner -->
+         <!-- end header -->
+         <!-- banner -->
+       
+      </header>
+      <div class="back_re">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2 align="center">Booking</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end banner -->
+      <!-- about -->
+      
+      <div class="about">
+          <div class="container-fluid">
+            <div class="row d_flex">
+                <div class="col-md-7">
+                  <div class="titlepage">
+                    
+                     
+                  </div>
+               </div>
+            </div> 
+            {% for msg in messages %}
+            <div class="col-md-12">
+            {{msg}}
+            </div>
+            {% endfor %}
+            <center> <div class="center">
+               <div class="col-md-6 padding_right0">
+                  <form id="request" class="main_form" method="POST" enctype="multipart/form-data">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <h5 align="left"><label>Name</label></h5>
+                           <input class="contactus" placeholder="Name" type="text" name="Name" required="required"> 
+                        </div>
+                        
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Mobile Number</label></h5>
+                           <input class="contactus" placeholder="Mobile NO" type="text" name="Number" required="required">                          
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Email</label></h5>
+                           <input class="contactus" placeholder="Email" type="text" name="Email" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Location (Locality)</label></h5>
+                           <input class="contactus" placeholder="Location" type="text" name="location" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Pincode</label></h5>
+                           <input class="contactus" placeholder="Pincode" type="type" pattern="[0-9]{6}" name="Pincode" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Address (area,Street)</label></h5>
+                           <input class="contactus" placeholder="Address" type="type"  name="Address" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>City/District/Town</label></h5>
+                           <input class="contactus" placeholder="City" type="type"  name="City" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Land Mark</label></h5>
+                           <input class="contactus" placeholder="Landmark" type="type"  name="Landmark" required="required"> 
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Date</label></h5>
+                        
+                       
+                       
+                           <input id="dateField" class="contactus" placeholder="Date" type="date" name="date" required="required"
+                           value="dd-mm-yy"
+                           min="2023-02-16" max="2030-12-31">
+                       
+                        </div>
+                        <div class="col-md-12">
+                           <h5 align="left"><label for="appt">Time</label></h5>
+                           <input class="contactus" placeholder="Time" type="time" name="time" id="appt" required="required"> 
+                        
+                        </div>
+                        
+
+                        {% comment %} <a href="#
+                        
+                        " onclick="myTermsandConditions()">T&C</a> {% endcomment %}
+
+                        
+{% comment %}                         
+                        
+                        <div class="col-md-12">
+                           <h5 align="left"><label>Address</label></h5>
+                           <textarea class="textarea" placeholder="Address" type="type" Message="Name" name="Address" required="required">Address</textarea>
+                        </div> {% endcomment %}
+
+                        {% comment %} <label for="Booktime">Choose Booking Time:</label>
+                        <div class="col-md-12">
+                            <select name="btime" id="cars">
+                            <option value="Morning">10-12</option>
+                            <option value="AfterNoon">3-4</option>
+                            <option value="Evening">5-7</option>
+                           
+                            </select>
+                        </div> {% endcomment %}
+
+                  
+                        <div class="col-md-12">
+                           <button class="send_btn">Book</button>
+                        </div>
+                     </div>
+                  </form>
+               </div></center>
+               <div class="col-md-6 padding_left0">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+      <div class="truck">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6 jkhgkj">
+                  <div class="truck_img1">
+                     <img src="{% static 'images/truck.png' %}" alt="#"/>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="truck_img1">
+                     <img src="{% static 'images/jcb.png' %}" alt="#"/>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+     
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end clients -->
+      <!--  footer -->
+       <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  {% comment %} <div class=" col-lg-3 col-md-6">
+                     <a class="logo_bottom"><img src="{% static 'images/logo_bottom.png' %}" alt="#"/></a>
+                     <p class="many">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou
+                     </p>
+                  </div>
+                  <div class="col-lg-2 offset-lg-1 col-md-6">
+                     <h3>QUICK LINKS</h3>
+                     <ul class="link_menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html"> About</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                     </ul>
+                  </div>
+                  <div class=" col-lg-3 col-md-6">
+                     <h3>INSTAGRAM FEEDS</h3>
+                     <ul class="insta text_align_left">
+                        <li><img src="{% static 'images/inst1.png' %}" alt="#"/></li>
+                        <li><img src="{% static 'images/inst2.png' %}" alt="#"/></li>
+                        <li><img src="{% static 'images/inst3.png' %}" alt="#"/></li>
+                        <li><img src="{% static 'images/inst4.png' %}" alt="#"/></li>
+                     </ul>
+                  </div>
+                  <div class=" col-lg-3 col-md-6 ">
+                     <h3>SIGN UP TO OUR NEWSLETTER </h3>
+                     <form class="bottom_form">
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">Sign Up</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-8 offset-md-2">
+                        <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a></p>
+                     </div> {% endcomment %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer> -->
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+   </body>
+</html>
